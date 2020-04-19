@@ -1,3 +1,4 @@
+import Header from '../components/Header';
 import { inject, observer } from 'mobx-react';
 
 @inject('store')
@@ -8,7 +9,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <div className="movies">Movies</div>
+        <Header text="MOOVIY" />
       </div>
     );
   }
