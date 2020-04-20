@@ -5,4 +5,11 @@ export class Movies {
   @observable errorMessage = null;
   @observable loading = false;
   @observable searchVal = '';
+  @observable favMovies = [
+    {
+      movieTitle: '',
+      moviePoster: '',
+      movieYear: '',
+    },
+  ];
 }

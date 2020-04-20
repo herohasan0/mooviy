@@ -1,3 +1,5 @@
+import AddtoFav from './AddtoFav';
+
 const DEFAULT_PLACEHOLDER_IMAGE = '/no-img.png';
 
 const Movie = (props) => {
@@ -18,6 +20,11 @@ const Movie = (props) => {
         />
       </div>
       <p className="Movie-year">{props.movie.Year}</p>
+      <AddtoFav
+        Title={props.movie.Title}
+        Poster={props.movie.poster}
+        Year={props.movie.Year}
+      />
     </div>
   );
 };

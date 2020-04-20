@@ -3,8 +3,7 @@ import Movie from '../components/Movie';
 import Search from '../components/Search';
 import { inject, observer } from 'mobx-react';
 
-//const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=${process.env.API_KEY}`;
-const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=4a3b711b`;
+const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=${process.env.API_KEY}`;
 
 @inject('store')
 @observer
