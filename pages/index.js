@@ -8,9 +8,13 @@ import { inject, observer } from 'mobx-react';
 class App extends React.Component {
   render() {
     const movies = this.props.store.movies;
-    const searchVal = this.props.store.searchVal;
+    const loading = this.props.store.loading;
+    const errorMessage = this.props.store.errorMessage;
 
     const searchFunc = (searchVal) => {
+      this.props.store.loading = true;
+      this.props.store.errorMessage = null;
+
       fetch(
         `https://www.omdbapi.com/?s=${searchVal}&apikey=${process.env.API_KEY}`
       )
@@ -18,8 +22,10 @@ class App extends React.Component {
         .then((jsonResponse) => {
           if (jsonResponse.Response === 'True') {
             this.props.store.movies = jsonResponse.Search;
+            this.props.store.loading = true;
           } else {
-            //error
+            this.props.store.errorMessage = json.Error;
+            this.props.store.loading = false;
           }
         });
     };
