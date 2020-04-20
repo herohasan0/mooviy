@@ -24,7 +24,7 @@ class App extends React.Component {
             this.props.store.movies = jsonResponse.Search;
             this.props.store.loading = false;
           } else {
-            this.props.store.errorMessage = json.Error;
+            this.props.store.errorMessage = jsonResponse.Error;
             this.props.store.loading = false;
           }
         });
