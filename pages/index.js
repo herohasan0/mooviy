@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import Movie from '../components/Movie';
+import Search from '../components/Search';
 import { inject, observer } from 'mobx-react';
 
 @inject('store')
@@ -11,6 +12,7 @@ class App extends React.Component {
     return (
       <div>
         <Header text="MOOVIY" />
+        <Search />
         <Movie />
       </div>
     );
