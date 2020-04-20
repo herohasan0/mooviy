@@ -3,9 +3,20 @@ import Movie from '../components/Movie';
 import Search from '../components/Search';
 import { inject, observer } from 'mobx-react';
 
+const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=${process.env.API_KEY}`;
+
 @inject('store')
 @observer
 class App extends React.Component {
+  componentDidMount() {
+    fetch(MOVIE_API_URL)
+      .then((response) => response.json())
+      .then((jsonResponse) => {
+        this.props.store.movies = jsonResponse.Search;
+        this.props.store.loading = false;
+      });
+  }
+
   render() {
     const movies = this.props.store.movies;
     const loading = this.props.store.loading;
