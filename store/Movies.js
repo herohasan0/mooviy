@@ -7,9 +7,9 @@ export class Movies {
   @observable searchVal = '';
   @observable favMovies = [
     {
-      movieTitle: '',
-      moviePoster: '',
-      movieYear: '',
+      movieTitle: '123',
+      moviePoster: '123',
+      movieYear: '11',
     },
   ];
 }
