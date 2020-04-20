@@ -28,7 +28,11 @@ class App extends React.Component {
       <div>
         <Header text="MOOVIY" />
         <Search search={searchFunc} />
-        <Movie />
+        <div className="movies">
+          {movies.map((movie, index) => (
+            <Movie movie={movie} />
+          ))}
+        </div>
       </div>
     );
   }
