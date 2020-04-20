@@ -22,7 +22,7 @@ const Movie = (props) => {
       <p className="Movie-year">{props.movie.Year}</p>
       <AddtoFav
         Title={props.movie.Title}
-        poster={props.movie.poster}
+        poster={poster}
         Year={props.movie.Year}
       />
     </div>

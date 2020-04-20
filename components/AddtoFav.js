@@ -6,9 +6,9 @@ class AddtoFav extends React.Component {
   render() {
     const add = () => {
       this.props.store.favMovies.push({
-        movieTitle: this.props.Title,
-        moviePoster: this.props.poster,
-        movieYear: this.props.Year,
+        Title: this.props.Title,
+        poster: this.props.poster,
+        Year: this.props.Year,
       });
     };
 

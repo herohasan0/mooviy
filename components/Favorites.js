@@ -9,7 +9,7 @@ class Favorites extends React.Component {
     return (
       <div className="Favorites">
         {movies.map((movie) => (
-          <h1>{movie.movieYear}</h1>
+          <Movie movie={movie} />
         ))}
       </div>
     );
