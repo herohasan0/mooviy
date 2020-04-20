@@ -3,7 +3,8 @@ import Movie from '../components/Movie';
 import Search from '../components/Search';
 import { inject, observer } from 'mobx-react';
 
-const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=${process.env.API_KEY}`;
+//const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=${process.env.API_KEY}`;
+const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=4a3b711b`;
 
 @inject('store')
 @observer
@@ -49,9 +50,11 @@ class App extends React.Component {
           {loading && !errorMessage ? (
             <p>Loading...</p>
           ) : errorMessage ? (
-            <p>{errorMessage}</p>
+            <p className="errorMessage">{errorMessage}</p>
           ) : (
-            movies.map((movie, index) => <Movie key={index} movie={movie} />)
+            movies.map((movie, index) => (
+              <Movie key={`${index}-${movie.Title}`} movie={movie} />
+            ))
           )}
         </div>
       </div>
