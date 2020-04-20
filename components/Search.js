@@ -12,14 +12,25 @@ class Search extends React.Component {
       this.props.store.searchVal = '';
     };
 
+    const callSearchFunc = (e) => {
+      e.preventDefault();
+      this.props.search(this.props.store.searchVal);
+      resetInput();
+    };
+
     return (
       <form className="Search">
         <input
           className="Search-input"
           onChange={inputChanges}
           value={this.props.store.searchVal}
+          type="text"
         />
-        <input type="submit" className="Search-button" />
+        <input
+          className="Search-button"
+          onClick={callSearchFunc}
+          type="submit"
+        />
       </form>
     );
   }

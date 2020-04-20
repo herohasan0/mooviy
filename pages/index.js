@@ -8,11 +8,26 @@ import { inject, observer } from 'mobx-react';
 class App extends React.Component {
   render() {
     const movies = this.props.store.movies;
+    const searchVal = this.props.store.searchVal;
+
+    const searchFunc = (searchVal) => {
+      fetch(
+        `https://www.omdbapi.com/?s=${searchVal}&apikey=${process.env.API_KEY}`
+      )
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+          if (jsonResponse.Response === 'True') {
+            this.props.store.movies = jsonResponse.Search;
+          } else {
+            //error
+          }
+        });
+    };
 
     return (
       <div>
         <Header text="MOOVIY" />
-        <Search />
+        <Search search={searchFunc} />
         <Movie />
       </div>
     );
