@@ -1,5 +1,4 @@
 const Movie = (props) => {
-  console.log(props);
   return (
     <div className="Movie">
       <h2 className="Movie-title">{props.movie.Title}</h2>

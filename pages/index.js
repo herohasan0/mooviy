@@ -22,7 +22,7 @@ class App extends React.Component {
         .then((jsonResponse) => {
           if (jsonResponse.Response === 'True') {
             this.props.store.movies = jsonResponse.Search;
-            this.props.store.loading = true;
+            this.props.store.loading = false;
           } else {
             this.props.store.errorMessage = json.Error;
             this.props.store.loading = false;
@@ -35,9 +35,13 @@ class App extends React.Component {
         <Header text="MOOVIY" />
         <Search search={searchFunc} />
         <div className="movies">
-          {movies.map((movie, index) => (
-            <Movie movie={movie} />
-          ))}
+          {loading && !errorMessage ? (
+            <p>Loading...</p>
+          ) : errorMessage ? (
+            <p>{errorMessage}</p>
+          ) : (
+            movies.map((movie, index) => <Movie key={index} movie={movie} />)
+          )}
         </div>
       </div>
     );
