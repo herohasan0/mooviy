@@ -51,7 +51,7 @@ class App extends React.Component {
     };
 
     return (
-      <div>
+      <div className="container">
         <Link href="/favorites">
           <a>
             Favorites <span>{this.props.store.favCount}</span>

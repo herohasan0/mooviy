@@ -368,3 +368,11 @@ table {
 
 td {
   padding: 0; }
+
+body {
+  background: linear-gradient(90deg, #1e2931 0%, #394e5b 88.4%); }
+
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto; }
