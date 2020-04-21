@@ -379,6 +379,11 @@ body {
   margin-left: auto;
   margin-right: auto; }
 
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
 .Header {
   display: flex;
   justify-content: space-between;
@@ -430,3 +435,29 @@ body {
 
 .Search-button {
   display: none; }
+
+.Movie {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-top: 24px; }
+  .Movie-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-right: 8px; }
+    .Movie-bottom-text {
+      margin-right: 5px; }
+      .Movie-bottom-text-title {
+        color: #fff;
+        font-size: 1em; }
+      .Movie-bottom-text-year {
+        margin-top: 8px;
+        font-size: 14px;
+        color: #687d88; }
+
+.Addtofav {
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  cursor: pointer; }

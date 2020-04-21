@@ -9,3 +9,9 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

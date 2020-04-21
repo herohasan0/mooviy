@@ -9,22 +9,26 @@ const Movie = (props) => {
       : props.movie.Poster;
   return (
     <div className="Movie">
-      <h2 className="Movie-title">{props.movie.Title}</h2>
-      <div>
+      <div className="Movie-top">
         <img
           width="200"
           height="300"
-          className="Movie-img"
+          className="Movie-top-img"
           src={poster}
           alt={`The movie titled: ${props.movie.Title}`}
         />
       </div>
-      <p className="Movie-year">{props.movie.Year}</p>
-      <AddtoFav
-        Title={props.movie.Title}
-        poster={poster}
-        Year={props.movie.Year}
-      />
+      <div className="Movie-bottom">
+        <div className="Movie-bottom-text">
+          <h2 className="Movie-bottom-text-title">{props.movie.Title}</h2>
+          <p className="Movie-bottom-text-year">{props.movie.Year}</p>
+        </div>
+        <AddtoFav
+          Title={props.movie.Title}
+          poster={poster}
+          Year={props.movie.Year}
+        />
+      </div>
     </div>
   );
 };

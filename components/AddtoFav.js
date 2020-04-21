@@ -17,7 +17,11 @@ class AddtoFav extends React.Component {
         localStorage.setItem('favMovies', JSON.stringify(movies));
       }
     };
-    return <button onClick={add}>add</button>;
+    return (
+      <div className="Addtofav" onClick={add}>
+        <img src="/like.svg" alt="" className="Addtofav-img" />
+      </div>
+    );
   }
 }
 
