@@ -1,7 +1,15 @@
+import Link from 'next/link';
 import Favorites from '../components/Favorites';
 
 const favorites = () => {
-  return <Favorites />;
+  return (
+    <div>
+      <Link href="/">
+        <a>Home</a>
+      </Link>
+      <Favorites />
+    </div>
+  );
 };
 
-export default Favorites;
+export default favorites;

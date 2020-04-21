@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Movie from '../components/Movie';
 import Search from '../components/Search';
+import Link from 'next/link';
 import { inject, observer } from 'mobx-react';
 
 const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=${process.env.API_KEY}`;
@@ -21,6 +22,14 @@ class App extends React.Component {
     const movies = this.props.store.movies;
     const loading = this.props.store.loading;
     const errorMessage = this.props.store.errorMessage;
+
+    const show = () => {
+      console.log(localStorage);
+    };
+    const clearAll = () => {
+      localStorage.clear();
+      console.log(localStorage);
+    };
 
     const searchFunc = (searchVal) => {
       this.props.store.loading = true;
@@ -43,6 +52,13 @@ class App extends React.Component {
 
     return (
       <div>
+        <Link href="/favorites">
+          <a>
+            Favorites <span>{this.props.store.favCount}</span>
+          </a>
+        </Link>
+        <button onClick={show}>showLocalStorage</button>
+        <button onClick={clearAll}>clearAll</button>
         <Header text="MOOVIY" />
         <Search search={searchFunc} />
         <div className="movies">
