@@ -1,0 +1,16 @@
+.Search {
+  &-input {
+    width: 60px;
+    margin-right: 24px;
+    background: none;
+    border: none;
+    outline: none;
+    color: $color-white;
+    &::placeholder {
+      color: white;
+    }
+  }
+  &-button {
+    display: none;
+  }
+}

@@ -1,0 +1,36 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  color: $color-white;
+  &-left {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    &-img {
+      width: 93px;
+      height: 32px;
+    }
+  }
+  &-right {
+    display: flex;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    &-link {
+      display: flex;
+      position: relative;
+      color: $color-white;
+      &-indicator {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        top: -10px;
+        right: -18px;
+        font-weight: bold;
+        background-color: red;
+        border-radius: 20px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

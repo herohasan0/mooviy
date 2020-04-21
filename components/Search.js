@@ -25,6 +25,7 @@ class Search extends React.Component {
           onChange={inputChanges}
           value={this.props.store.searchVal}
           type="text"
+          placeholder="search"
         />
         <input
           className="Search-button"

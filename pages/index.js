@@ -1,6 +1,5 @@
 import Header from '../components/Header';
 import Movie from '../components/Movie';
-import Search from '../components/Search';
 import Link from 'next/link';
 import { inject, observer } from 'mobx-react';
 
@@ -31,36 +30,11 @@ class App extends React.Component {
       console.log(localStorage);
     };
 
-    const searchFunc = (searchVal) => {
-      this.props.store.loading = true;
-      this.props.store.errorMessage = null;
-
-      fetch(
-        `https://www.omdbapi.com/?s=${searchVal}&apikey=${process.env.API_KEY}`
-      )
-        .then((response) => response.json())
-        .then((jsonResponse) => {
-          if (jsonResponse.Response === 'True') {
-            this.props.store.movies = jsonResponse.Search;
-            this.props.store.loading = false;
-          } else {
-            this.props.store.errorMessage = jsonResponse.Error;
-            this.props.store.loading = false;
-          }
-        });
-    };
-
     return (
       <div className="container">
-        <Link href="/favorites">
-          <a>
-            Favorites <span>{this.props.store.favCount}</span>
-          </a>
-        </Link>
+        <Header text="MOOVIY" />
         <button onClick={show}>showLocalStorage</button>
         <button onClick={clearAll}>clearAll</button>
-        <Header text="MOOVIY" />
-        <Search search={searchFunc} />
         <div className="movies">
           {loading && !errorMessage ? (
             <p>Loading...</p>
