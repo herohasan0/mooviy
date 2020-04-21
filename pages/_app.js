@@ -1,3 +1,4 @@
+import '../main.css';
 import { Movies } from '../store/Movies';
 import { Provider } from 'mobx-react';
 import { useMemo } from 'react';
