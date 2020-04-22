@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import Movie from '../components/Movie';
 import Link from 'next/link';
 import { inject, observer } from 'mobx-react';
+import Loading from '../components/Loading';
 
 const MOVIE_API_URL = `https://www.omdbapi.com/?s=man&apikey=${process.env.API_KEY}`;
 
@@ -27,7 +28,7 @@ class App extends React.Component {
         <Header />
         <div className="movies">
           {loading && !errorMessage ? (
-            <p>Loading...</p>
+            <Loading />
           ) : errorMessage ? (
             <p className="errorMessage">{errorMessage}</p>
           ) : (

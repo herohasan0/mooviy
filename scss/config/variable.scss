@@ -1,10 +1,18 @@
+//Colors
 $bacground-gradient: linear-gradient(90deg, #1e2931 0%, #394e5b 88.4%);
 $color-white: #fff;
 $color-gray: #687d88;
 $card-shadow: 0px 16px 32px rgba(26, 26, 26, 0.603);
 
+//Sizing
 $container-width: 1140px;
 
+//Font
 $font-family: Helvetica;
 $font-size: 16px;
 $font-size-small: 14px;
+
+//Loading animation
+$base-color: #acacac13;
+$shine-color: #acacac2f;
+$animation-duration: 2s;
