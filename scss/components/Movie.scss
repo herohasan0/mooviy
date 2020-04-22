@@ -3,6 +3,15 @@
   flex-direction: column;
   width: 200px;
   margin-top: 24px;
+  &-top {
+    box-shadow: $card-shadow;
+    &-img {
+      &:hover {
+        cursor: pointer;
+        box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.747);
+      }
+    }
+  }
   &-bottom {
     display: flex;
     justify-content: space-between;

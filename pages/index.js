@@ -24,7 +24,7 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        <Header text="MOOVIY" />
+        <Header />
         <div className="movies">
           {loading && !errorMessage ? (
             <p>Loading...</p>

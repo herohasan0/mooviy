@@ -13,9 +13,11 @@ class Favorites extends React.Component {
     }
     return (
       <div className="Favorites">
-        {movies.map((movie) => (
-          <Movie movie={movie} />
-        ))}
+        <div className="movies">
+          {movies.map((movie) => (
+            <Movie movie={movie} />
+          ))}
+        </div>
       </div>
     );
   }

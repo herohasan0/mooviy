@@ -1,12 +1,11 @@
 import Link from 'next/link';
+import Header from '../components/Header';
 import Favorites from '../components/Favorites';
 
 const favorites = () => {
   return (
-    <div>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
+    <div className="container">
+      <Header />
       <Favorites />
     </div>
   );
