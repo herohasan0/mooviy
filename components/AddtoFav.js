@@ -17,6 +17,12 @@ class AddtoFav extends React.Component {
         this.props.store.favCount = movies.length;
         localStorage.setItem('favMovies', JSON.stringify(movies));
       }
+      this.props.store.favMovies[0].push({
+        Title: this.props.Title,
+        Poster: this.props.poster,
+        Year: this.props.Year,
+        Selected: true,
+      });
     };
     return (
       <div className="Addtofav" title="Add to Favorites" onClick={add}>

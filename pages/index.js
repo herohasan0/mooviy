@@ -19,6 +19,13 @@ class App extends React.Component {
   // }
 
   render() {
+    let movies2 = [];
+    if (typeof window !== 'undefined') {
+      movies2 = localStorage.getItem('favMovies');
+      movies2 = movies2 ? JSON.parse(movies2) : [];
+    }
+    console.log(this.props.store.favMovies);
+    console.log(movies2);
     const movies = this.props.store.movies;
     const loading = this.props.store.loading;
     const errorMessage = this.props.store.errorMessage;
