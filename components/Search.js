@@ -6,6 +6,9 @@ class Search extends React.Component {
   render() {
     const inputChanges = (e) => {
       this.props.store.searchVal = e.target.value;
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('lastSearch', e.target.value);
+      }
     };
 
     const resetInput = () => {

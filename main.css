@@ -534,3 +534,7 @@ body {
     height: inherit;
     background: url("/liked.svg") no-repeat center center;
     background-size: 20px 20px; }
+
+.Label {
+  color: white;
+  margin-left: 14px; }
