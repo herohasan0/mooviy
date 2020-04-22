@@ -465,13 +465,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 40px;
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
   cursor: pointer; }
   .Addtofav-img {
-    width: 20px;
-    height: 20px;
+    width: inherit;
+    height: inherit;
     background: url("/like.svg") no-repeat center center;
     background-size: 20px 20px; }
   .Addtofav:hover {
@@ -525,12 +525,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 40px;
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
   cursor: pointer; }
   .Remove-img {
-    width: 32px;
-    height: 32px;
+    width: inherit;
+    height: inherit;
     background: url("/liked.svg") no-repeat center center;
     background-size: 20px 20px; }

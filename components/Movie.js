@@ -1,56 +1,59 @@
 import AddtoFav from './AddtoFav';
 import Remove from './Remove';
+import { inject, observer } from 'mobx-react';
 
 const DEFAULT_PLACEHOLDER_IMAGE = '/no-img.png';
 
-const Movie = (props) => {
-  let movies = [];
-  let selected = false;
-  if (typeof window !== 'undefined') {
-    movies = localStorage.getItem('favMovies');
-    movies = movies ? JSON.parse(movies) : [];
-    movies.map((movie) => {
-      if (movie.Title === props.movie.Title) {
-        selected = true;
-      }
-    });
-  }
-  const poster =
-    props.movie.Poster === 'N/A'
-      ? DEFAULT_PLACEHOLDER_IMAGE
-      : props.movie.Poster;
-  return (
-    <div className="Movie">
-      <div className="Movie-top">
-        <img
-          width="200"
-          height="300"
-          className="Movie-top-img"
-          src={poster}
-          alt={`The movie titled: ${props.movie.Title}`}
-        />
-      </div>
-      <div className="Movie-bottom">
-        <div className="Movie-bottom-text">
-          <h2 className="Movie-bottom-text-title">{props.movie.Title}</h2>
-          <p className="Movie-bottom-text-year">{props.movie.Year}</p>
+@inject('store')
+@observer
+class Movie extends React.Component {
+  render() {
+    let movies = [];
+    let selected = false;
+    if (typeof window !== 'undefined') {
+      movies = this.props.store.favMovies[0];
+      movies.map((movie) => {
+        if (movie.Title === this.props.movie.Title) {
+          selected = true;
+        }
+      });
+    }
+
+    const poster =
+      this.props.movie.Poster === 'N/A'
+        ? DEFAULT_PLACEHOLDER_IMAGE
+        : this.props.movie.Poster;
+    return (
+      <div className="Movie">
+        <div className="Movie-top">
+          <img
+            width="200"
+            height="300"
+            className="Movie-top-img"
+            src={poster}
+            alt={`The movie titled: ${this.props.movie.Title}`}
+          />
         </div>
-        {selected ? (
-          <Remove
-            Title={props.movie.Title}
-            poster={poster}
-            Year={props.movie.Year}
-          />
-        ) : (
-          <AddtoFav
-            Title={props.movie.Title}
-            poster={poster}
-            Year={props.movie.Year}
-          />
-        )}
+        <div className="Movie-bottom">
+          <div className="Movie-bottom-text">
+            <h2 className="Movie-bottom-text-title">
+              {this.props.movie.Title}
+            </h2>
+            <p className="Movie-bottom-text-year">{this.props.movie.Year}</p>
+          </div>
+          {selected ? (
+            <Remove Title={this.props.movie.Title} />
+          ) : (
+            <AddtoFav
+              Title={this.props.movie.Title}
+              poster={poster}
+              Year={this.props.movie.Year}
+            />
+          )}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Movie;
