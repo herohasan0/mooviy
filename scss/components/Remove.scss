@@ -1,4 +1,4 @@
-.Addtofav {
+.Remove {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,12 +7,9 @@
   border-radius: 40px;
   cursor: pointer;
   &-img {
-    width: 20px;
-    height: 20px;
-    background: url('/like.svg') no-repeat center center;
+    width: 32px;
+    height: 32px;
+    background: url('/liked.svg') no-repeat center center;
     background-size: 20px 20px;
-  }
-  &:hover {
-    background-color: rgba(224, 36, 36, 0.493);
   }
 }

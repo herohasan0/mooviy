@@ -12,14 +12,15 @@ class AddtoFav extends React.Component {
           Title: this.props.Title,
           Poster: this.props.poster,
           Year: this.props.Year,
+          Selected: true,
         });
         this.props.store.favCount = movies.length;
         localStorage.setItem('favMovies', JSON.stringify(movies));
       }
     };
     return (
-      <div className="Addtofav" onClick={add}>
-        <img src="/like.svg" alt="" className="Addtofav-img" />
+      <div className="Addtofav" title="Add to Favorites" onClick={add}>
+        <div className="Addtofav-img"></div>
       </div>
     );
   }

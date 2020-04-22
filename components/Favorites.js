@@ -9,7 +9,7 @@ class Favorites extends React.Component {
     if (typeof window !== 'undefined') {
       movies = localStorage.getItem('favMovies');
       movies = movies ? JSON.parse(movies) : [];
-      console.log(movies.length);
+      console.log(movies);
     }
     return (
       <div className="Favorites">

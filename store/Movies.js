@@ -12,4 +12,5 @@ export class Movies {
   @observable loading = false;
   @observable searchVal = '';
   @observable favCount = movies.length;
+  @observable selected = false;
 }

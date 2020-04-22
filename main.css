@@ -449,8 +449,7 @@ body {
   .Movie-bottom {
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
-    padding-right: 8px; }
+    margin-top: 15px; }
     .Movie-bottom-text {
       margin-right: 5px; }
       .Movie-bottom-text-title {
@@ -462,10 +461,20 @@ body {
         color: #687d88; }
 
 .Addtofav {
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
   cursor: pointer; }
+  .Addtofav-img {
+    width: 20px;
+    height: 20px;
+    background: url("/like.svg") no-repeat center center;
+    background-size: 20px 20px; }
+  .Addtofav:hover {
+    background-color: rgba(224, 36, 36, 0.493); }
 
 .Loading {
   width: 200px;
@@ -510,3 +519,17 @@ body {
     background-position: 200px; }
   100% {
     background-position: 200px; } }
+
+.Remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  cursor: pointer; }
+  .Remove-img {
+    width: 32px;
+    height: 32px;
+    background: url("/liked.svg") no-repeat center center;
+    background-size: 20px 20px; }
