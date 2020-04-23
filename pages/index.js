@@ -16,18 +16,16 @@ const MOVIE_API_URL = lastSearch
 @inject('store')
 @observer
 class App extends React.Component {
-  // componentDidMount() {
-  //   fetch(MOVIE_API_URL)
-  //     .then((response) => response.json())
-  //     .then((jsonResponse) => {
-  //       this.props.store.movies = jsonResponse.Search;
-  //       this.props.store.loading = false;
-  //     });
-  // }
+  componentDidMount() {
+    fetch(MOVIE_API_URL)
+      .then((response) => response.json())
+      .then((jsonResponse) => {
+        this.props.store.movies = jsonResponse.Search;
+        this.props.store.loading = false;
+      });
+  }
 
   render() {
-    console.log(process.env.API_KEY);
-
     const movies = this.props.store.movies;
     const loading = this.props.store.loading;
     const errorMessage = this.props.store.errorMessage;
