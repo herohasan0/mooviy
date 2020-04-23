@@ -10,7 +10,9 @@ class Header extends React.Component {
       this.props.store.loading = true;
       this.props.store.errorMessage = null;
 
-      fetch(`https://www.omdbapi.com/?s=${searchVal}&apikey=68fbdc23`)
+      fetch(
+        `https://www.omdbapi.com/?s=${searchVal}&apikey=${process.env.API_KEY}`
+      )
         .then((response) => response.json())
         .then((jsonResponse) => {
           if (jsonResponse.Response === 'True') {

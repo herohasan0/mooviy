@@ -1,19 +1,17 @@
 import Header from '../components/Header';
 import Movie from '../components/Movie';
-import Link from 'next/link';
 import { inject, observer } from 'mobx-react';
 import Loading from '../components/Loading';
 import Label from '../components/Label';
 
 let lastSearch = '';
-
 if (typeof window !== 'undefined') {
   lastSearch = localStorage.getItem('lastSearch');
 }
 
 const MOVIE_API_URL = lastSearch
-  ? `https://www.omdbapi.com/?s=${lastSearch}&apikey=68fbdc23`
-  : `https://www.omdbapi.com/?s=man&y=2020&apikey=68fbdc23`;
+  ? `https://www.omdbapi.com/?s=${lastSearch}&apikey=${process.env.API_KEY}`
+  : `https://www.omdbapi.com/?s=man&y=2020&apikey=${process.env.API_KEY}`;
 
 @inject('store')
 @observer
@@ -28,12 +26,8 @@ class App extends React.Component {
   // }
 
   render() {
-    let movies2 = [];
     console.log(process.env.API_KEY);
-    if (typeof window !== 'undefined') {
-      movies2 = localStorage.getItem('favMovies');
-      movies2 = movies2 ? JSON.parse(movies2) : [];
-    }
+
     const movies = this.props.store.movies;
     const loading = this.props.store.loading;
     const errorMessage = this.props.store.errorMessage;
@@ -42,7 +36,7 @@ class App extends React.Component {
       <div className="container">
         <Header />
         {lastSearch ? (
-          <Label text={`Your last search '${lastSearch}'.`} />
+          <Label text={`Your last search is ' ${lastSearch} '.`} />
         ) : (
           <Label text="You will see your last search here." />
         )}
