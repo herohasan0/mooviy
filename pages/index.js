@@ -12,8 +12,8 @@ if (typeof window !== 'undefined') {
 }
 
 const MOVIE_API_URL = lastSearch
-  ? `https://www.omdbapi.com/?s=${lastSearch}&apikey=${process.env.API_KEY}`
-  : `https://www.omdbapi.com/?s=man&y=2020&apikey=${process.env.API_KEY}`;
+  ? `https://www.omdbapi.com/?s=${lastSearch}&apikey=68fbdc23`
+  : `https://www.omdbapi.com/?s=man&y=2020&apikey=68fbdc23`;
 
 @inject('store')
 @observer
