@@ -18,6 +18,7 @@ class Search extends React.Component {
     const callSearchFunc = (e) => {
       e.preventDefault();
       this.props.search(this.props.store.searchVal);
+      this.props.store.lastSearch = this.props.store.searchVal;
       resetInput();
     };
 
