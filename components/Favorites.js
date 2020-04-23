@@ -1,5 +1,6 @@
 import { inject, observer } from 'mobx-react';
-import Movie from '../components/Movie';
+import Movie from './Movie';
+import Details from './Details';
 import Label from './Label';
 
 @inject('store')
@@ -19,6 +20,7 @@ class Favorites extends React.Component {
             <Movie movie={movie} />
           ))}
         </div>
+        <Details />
       </div>
     );
   }

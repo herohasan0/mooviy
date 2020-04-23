@@ -2,6 +2,7 @@ import AddtoFav from './AddtoFav';
 import Remove from './Remove';
 import { inject, observer } from 'mobx-react';
 import Details from './Details';
+import Showdetails from './Showdetails';
 
 const DEFAULT_PLACEHOLDER_IMAGE = '/no-img.png';
 
@@ -27,6 +28,7 @@ class Movie extends React.Component {
     return (
       <div className="Movie">
         <div className="Movie-top">
+          <Showdetails imdbID={this.props.movie.imdbID} />
           <img
             width="200"
             height="300"
@@ -49,10 +51,10 @@ class Movie extends React.Component {
               Title={this.props.movie.Title}
               poster={poster}
               Year={this.props.movie.Year}
+              imdbID={this.props.movie.imdbID}
             />
           )}
         </div>
-        <Details text="Avatar" />
       </div>
     );
   }

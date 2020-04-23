@@ -1,36 +1,23 @@
 .Details {
+  display: none;
   position: absolute;
-  details {
-    &[open] > summary:before {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 1;
-      display: block;
-      cursor: default;
-      content: '';
-      background-color: rgba(89, 89, 89, 0.55);
-    }
-    summary {
-      width: 200px;
-      height: 300px;
-      user-select: none;
-      cursor: pointer;
-      outline: none;
-      background-color: rgba(255, 0, 0, 0.356);
-      &::-webkit-details-marker {
-        display: none;
-      }
-    }
+  top: 0;
+  &-remove {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -150px;
+    width: 1440px;
+    height: 863px;
+    z-index: 1;
+    background-color: rgba(119, 119, 119, 0.308);
+    cursor: pointer;
   }
   &-body {
     display: flex;
     position: absolute;
-    top: -35px;
-    left: -170px;
-    width: 500px;
+    top: 250px;
+    left: 295px;
     height: 370px;
     z-index: 1;
     background-color: $color-dark;
@@ -41,7 +28,7 @@
       padding-left: 30px;
       padding-top: 30px;
       &-title {
-        font-size: 28px;
+        font-size: 1.5em;
       }
       &-imdb {
         margin-top: 17px;
@@ -74,7 +61,7 @@
             line-height: 14px;
           }
           & span:last-child {
-            width: 170px;
+            width: 250px;
             letter-spacing: 0.61px;
             line-height: 15px;
             font-weight: bold;
@@ -82,5 +69,8 @@
         }
       }
     }
+  }
+  &.show {
+    display: initial;
   }
 }

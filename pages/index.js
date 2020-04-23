@@ -3,6 +3,7 @@ import Movie from '../components/Movie';
 import { inject, observer } from 'mobx-react';
 import Loading from '../components/Loading';
 import Label from '../components/Label';
+import Details from '../components/Details';
 
 @inject('store')
 @observer
@@ -27,24 +28,27 @@ class App extends React.Component {
     const errorMessage = this.props.store.errorMessage;
 
     return (
-      <div className="container">
+      <div>
         <Header />
-        {lastSearch ? (
-          <Label text={`Your last search is ' ${lastSearch} '.`} />
-        ) : (
-          <Label text="You will see your last search here." />
-        )}
-
-        <div className="movies">
-          {loading && !errorMessage ? (
-            <Loading />
-          ) : errorMessage ? (
-            <p className="errorMessage">{errorMessage}</p>
+        <div className="container">
+          {lastSearch ? (
+            <Label text={`Your last search is ' ${lastSearch} '.`} />
           ) : (
-            movies.map((movie, index) => (
-              <Movie key={`${index}-${movie.Title}`} movie={movie} />
-            ))
+            <Label text="You will see your last search here." />
           )}
+
+          <div className="movies">
+            {loading && !errorMessage ? (
+              <Loading />
+            ) : errorMessage ? (
+              <p className="errorMessage">{errorMessage}</p>
+            ) : (
+              movies.map((movie, index) => (
+                <Movie key={`${index}-${movie.Title}`} movie={movie} />
+              ))
+            )}
+          </div>
+          <Details />
         </div>
       </div>
     );

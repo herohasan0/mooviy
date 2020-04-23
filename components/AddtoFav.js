@@ -13,6 +13,7 @@ class AddtoFav extends React.Component {
           Poster: this.props.poster,
           Year: this.props.Year,
           Selected: true,
+          imdbID: this.props.imdbID,
         });
         this.props.store.favCount = movies.length;
         localStorage.setItem('favMovies', JSON.stringify(movies));
@@ -22,6 +23,7 @@ class AddtoFav extends React.Component {
         Poster: this.props.poster,
         Year: this.props.Year,
         Selected: true,
+        imdbID: this.props.imdbID,
       });
     };
     return (

@@ -27,23 +27,25 @@ class Header extends React.Component {
 
     return (
       <header className="Header">
-        <div className="Header-left">
-          <Link href="/">
-            <a>
-              <img src="/logo.png" alt="" className="Header-left-img" />
-            </a>
-          </Link>
-        </div>
-        <div className="Header-right">
-          <Search search={searchFunc} />
-          <Link href="/favorites">
-            <a className="Header-right-link">
-              favorites
-              <span className="Header-right-link-indicator">
-                {this.props.store.favCount}
-              </span>
-            </a>
-          </Link>
+        <div className="Header-body">
+          <div className="Header-left">
+            <Link href="/">
+              <a>
+                <img src="/logo.png" alt="" className="Header-left-img" />
+              </a>
+            </Link>
+          </div>
+          <div className="Header-right">
+            <Search search={searchFunc} />
+            <Link href="/favorites">
+              <a className="Header-right-link">
+                favorites
+                <span className="Header-right-link-indicator">
+                  {this.props.store.favCount}
+                </span>
+              </a>
+            </Link>
+          </div>
         </div>
       </header>
     );

@@ -19,6 +19,7 @@ if (typeof window !== 'undefined') {
 
 export class Movies {
   @observable movies = [];
+  @observable detailMovie = [];
   @observable lastSearch = lastSearch;
   @observable errorMessage = null;
   @observable loading = false;

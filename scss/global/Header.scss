@@ -1,7 +1,20 @@
 .Header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   color: $color-white;
+
+  position: sticky;
+  top: 0;
+  background: $bacground-gradient;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  &-body {
+    display: flex;
+    justify-content: space-between;
+    width: $container-width;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
   &-left {
     padding-top: 24px;
     padding-bottom: 24px;
