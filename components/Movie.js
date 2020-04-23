@@ -1,6 +1,7 @@
 import AddtoFav from './AddtoFav';
 import Remove from './Remove';
 import { inject, observer } from 'mobx-react';
+import Details from './Details';
 
 const DEFAULT_PLACEHOLDER_IMAGE = '/no-img.png';
 
@@ -51,6 +52,7 @@ class Movie extends React.Component {
             />
           )}
         </div>
+        <Details text="Avatar" />
       </div>
     );
   }

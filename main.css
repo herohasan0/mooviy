@@ -436,6 +436,7 @@ body {
   display: none; }
 
 .Movie {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 200px;
@@ -538,3 +539,76 @@ body {
 .Label {
   color: white;
   margin-left: 14px; }
+
+.Details {
+  position: absolute; }
+  .Details details[open] > summary:before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    cursor: default;
+    content: '';
+    background-color: rgba(89, 89, 89, 0.55); }
+  .Details details summary {
+    width: 200px;
+    height: 300px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    cursor: pointer;
+    outline: none;
+    background-color: rgba(255, 0, 0, 0.356); }
+    .Details details summary::-webkit-details-marker {
+      display: none; }
+  .Details-body {
+    display: flex;
+    position: absolute;
+    top: -35px;
+    left: -170px;
+    width: 500px;
+    height: 370px;
+    z-index: 1;
+    background-color: #1f2b33;
+    box-shadow: 0 20px 40px rgba(37, 37, 37, 0.185);
+    color: #fff;
+    padding-right: 40px; }
+    .Details-body-right {
+      padding-left: 30px;
+      padding-top: 30px; }
+      .Details-body-right-title {
+        font-size: 28px; }
+      .Details-body-right-imdb {
+        margin-top: 17px;
+        display: flex;
+        align-items: center; }
+        .Details-body-right-imdb-point {
+          margin-left: 10px; }
+          .Details-body-right-imdb-point span:first-child {
+            font-size: 18px; }
+          .Details-body-right-imdb-point span:last-child {
+            font-size: 12px;
+            color: #b4bccc; }
+      .Details-body-right-content {
+        display: flex;
+        height: 215px;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 12px;
+        padding-top: 20px; }
+        .Details-body-right-content div {
+          display: flex; }
+          .Details-body-right-content div span:first-child {
+            width: 60px;
+            color: #d4dded;
+            letter-spacing: 0.6px;
+            line-height: 14px; }
+          .Details-body-right-content div span:last-child {
+            width: 170px;
+            letter-spacing: 0.61px;
+            line-height: 15px;
+            font-weight: bold; }
