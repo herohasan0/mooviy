@@ -12,7 +12,7 @@ class App extends React.Component {
     const lastSearch = this.props.store.lastSearch;
     const MOVIE_API_URL = lastSearch
       ? `https://www.omdbapi.com/?s=${lastSearch}&apikey=${process.env.API_KEY}`
-      : `https://www.omdbapi.com/?s=man&apikey=${process.env.API_KEY}`;
+      : `https://www.omdbapi.com/?s=blood&apikey=${process.env.API_KEY}`;
     fetch(MOVIE_API_URL)
       .then((response) => response.json())
       .then((jsonResponse) => {
