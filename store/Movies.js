@@ -13,6 +13,7 @@ if (typeof window !== 'undefined') {
     Year: movie.Year,
     Poster: movie.Poster,
     Selected: movie.Selected,
+    imdbID: movie.imdbID,
   }));
   favMovieList.push(obj);
 }

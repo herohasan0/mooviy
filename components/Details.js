@@ -16,7 +16,7 @@ class Details extends React.Component {
         <div className="Details-body">
           <div className="Details-body-left">
             <img
-              height="370px"
+              height="357px"
               src={movie.Poster}
               alt=""
               className="Details-body-left-img"

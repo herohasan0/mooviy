@@ -29,6 +29,8 @@
         font-size: 1.5em;
         &-remove {
           cursor: pointer;
+          margin-left: 10px;
+          color: #e91b1b;
           &:hover {
             color: rgba(128, 128, 128, 0.616);
           }
@@ -89,6 +91,7 @@
     left: 0;
     width: 100%;
     bottom: 0;
+    height: 100%;
     z-index: 2;
     background-color: rgba(54, 54, 54, 0.308);
     cursor: pointer;

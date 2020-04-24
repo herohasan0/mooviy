@@ -596,7 +596,9 @@ body {
         justify-content: space-between;
         font-size: 1.5em; }
         .Details-body-right-title-remove {
-          cursor: pointer; }
+          cursor: pointer;
+          margin-left: 10px;
+          color: #e91b1b; }
           .Details-body-right-title-remove:hover {
             color: rgba(128, 128, 128, 0.616); }
       .Details-body-right-imdb {
@@ -641,6 +643,7 @@ body {
     left: 0;
     width: 100%;
     bottom: 0;
+    height: 100%;
     z-index: 2;
     background-color: rgba(54, 54, 54, 0.308);
     cursor: pointer; }
