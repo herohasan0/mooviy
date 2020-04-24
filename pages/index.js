@@ -41,9 +41,9 @@ class App extends React.Component {
         <div id="Remove" onClick={remove}></div>
         <div className="container">
           {lastSearch ? (
-            <Label text={`Your last search is ' ${lastSearch} '.`} />
+            <Label text={`Your last 🔎  is ${lastSearch}.`} />
           ) : (
-            <Label text="You will see your last search here." />
+            <Label text="You will see your last 🔎 here" />
           )}
 
           <div className="movies">

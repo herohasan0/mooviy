@@ -8,6 +8,8 @@
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
   z-index: 2;
   width: 100%;
+  padding-right: $gutter;
+  padding-left: $gutter;
   &-body {
     display: flex;
     justify-content: space-between;

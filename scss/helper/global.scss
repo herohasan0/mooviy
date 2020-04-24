@@ -27,3 +27,9 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.errorMessage {
+  color: $color-white;
+  font-size: 2em;
+  margin-top: 10px;
+}

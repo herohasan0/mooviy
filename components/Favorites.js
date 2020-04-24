@@ -14,6 +14,7 @@ class Favorites extends React.Component {
     }
     return (
       <div className="Favorites">
+        <Label text="Your favorite movies are here ✨" />
         <div className="movies">
           {movies.map((movie, index) => (
             <Movie movie={movie} index={index} />
