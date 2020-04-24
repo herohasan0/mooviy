@@ -13,7 +13,7 @@ class Showdetails extends React.Component {
       detail.style.top = `${movie.offsetTop}px`;
 
       fetch(
-        `http://www.omdbapi.com/?i=${this.props.imdbID}&apikey=${process.env.API_KEY}`
+        `https://www.omdbapi.com/?i=${this.props.imdbID}&apikey=${process.env.API_KEY}`
       )
         .then((response) => response.json())
         .then((jsonResponse) => {
