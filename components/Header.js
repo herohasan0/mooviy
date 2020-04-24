@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import Search from '../components/Search';
 import { inject, observer } from 'mobx-react';
 
@@ -26,28 +27,42 @@ class Header extends React.Component {
     };
 
     return (
-      <header className="Header">
-        <div className="Header-body">
-          <div className="Header-left">
-            <Link href="/">
-              <a>
-                <img src="/logo.png" alt="" className="Header-left-img" />
-              </a>
-            </Link>
+      <div className="div">
+        <Head>
+          <title>MOOVIY - Find Best Movies</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          <link rel="shortcut icon" type="image/png" href="/favicon.svg" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap"
+            rel="stylesheet"
+          ></link>
+        </Head>
+        <header className="Header">
+          <div className="Header-body">
+            <div className="Header-left">
+              <Link href="/">
+                <a>
+                  <img src="/logo.png" alt="" className="Header-left-img" />
+                </a>
+              </Link>
+            </div>
+            <div className="Header-right">
+              <Search search={searchFunc} />
+              <Link href="/favorites">
+                <a className="Header-right-link">
+                  favorites
+                  <span className="Header-right-link-indicator">
+                    {this.props.store.favCount}
+                  </span>
+                </a>
+              </Link>
+            </div>
           </div>
-          <div className="Header-right">
-            <Search search={searchFunc} />
-            <Link href="/favorites">
-              <a className="Header-right-link">
-                favorites
-                <span className="Header-right-link-indicator">
-                  {this.props.store.favCount}
-                </span>
-              </a>
-            </Link>
-          </div>
-        </div>
-      </header>
+        </header>
+      </div>
     );
   }
 }
