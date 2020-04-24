@@ -1,4 +1,8 @@
 .Label {
   color: white;
-  margin-left: 14px;
+  font-size: 1em;
+  @include mq {
+    font-size: 1.3em;
+    margin-left: 14px;
+  }
 }

@@ -1,34 +1,38 @@
 .Details {
   display: none;
   position: absolute;
-  top: 0;
-  &-remove {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: -150px;
-    width: 1440px;
-    height: 863px;
-    z-index: 1;
-    background-color: rgba(119, 119, 119, 0.308);
-    cursor: pointer;
-  }
   &-body {
     display: flex;
-    position: absolute;
-    top: 250px;
-    left: 295px;
-    height: 370px;
-    z-index: 1;
+    position: relative;
+    height: 357px;
+    z-index: 3;
     background-color: $color-dark;
     box-shadow: 0 20px 40px rgba(37, 37, 37, 0.185);
     color: $color-white;
     padding-right: 40px;
+    @include mq {
+    }
+    &-left {
+      &-img {
+        display: none;
+        @include mq {
+          display: initial;
+        }
+      }
+    }
     &-right {
       padding-left: 30px;
       padding-top: 30px;
       &-title {
+        display: flex;
+        justify-content: space-between;
         font-size: 1.5em;
+        &-remove {
+          cursor: pointer;
+          &:hover {
+            color: rgba(128, 128, 128, 0.616);
+          }
+        }
       }
       &-imdb {
         margin-top: 17px;
@@ -72,5 +76,21 @@
   }
   &.show {
     display: initial;
+  }
+}
+
+#Remove {
+  display: none;
+
+  &.remove-show {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(54, 54, 54, 0.308);
+    cursor: pointer;
   }
 }

@@ -12,7 +12,7 @@ class App extends React.Component {
     const lastSearch = this.props.store.lastSearch;
     const MOVIE_API_URL = lastSearch
       ? `https://www.omdbapi.com/?s=${lastSearch}&apikey=${process.env.API_KEY}`
-      : `https://www.omdbapi.com/?s=man&y=2020&apikey=${process.env.API_KEY}`;
+      : `https://www.omdbapi.com/?s=man&apikey=${process.env.API_KEY}`;
     fetch(MOVIE_API_URL)
       .then((response) => response.json())
       .then((jsonResponse) => {
@@ -27,9 +27,18 @@ class App extends React.Component {
     const loading = this.props.store.loading;
     const errorMessage = this.props.store.errorMessage;
 
+    const remove = () => {
+      const detail = document.getElementById('Details');
+      const remove = document.getElementById('Remove');
+      detail.classList.remove('show');
+      remove.classList.remove('remove-show');
+    };
+
     return (
-      <div>
+      <div className="body">
         <Header />
+        <Details />
+        <div id="Remove" onClick={remove}></div>
         <div className="container">
           {lastSearch ? (
             <Label text={`Your last search is ' ${lastSearch} '.`} />
@@ -44,11 +53,14 @@ class App extends React.Component {
               <p className="errorMessage">{errorMessage}</p>
             ) : (
               movies.map((movie, index) => (
-                <Movie key={`${index}-${movie.Title}`} movie={movie} />
+                <Movie
+                  index={index}
+                  key={`${index}-${movie.Title}`}
+                  movie={movie}
+                />
               ))
             )}
           </div>
-          <Details />
         </div>
       </div>
     );

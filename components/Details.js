@@ -6,12 +6,13 @@ class Details extends React.Component {
   render() {
     const remove = () => {
       const detail = document.getElementById('Details');
+      const remove = document.getElementById('Remove');
       detail.classList.remove('show');
+      remove.classList.remove('remove-show');
     };
     const movie = this.props.store.detailMovie;
     return (
       <div className="Details" id="Details">
-        <div className="Details-remove" onClick={remove}></div>
         <div className="Details-body">
           <div className="Details-body-left">
             <img
@@ -22,7 +23,12 @@ class Details extends React.Component {
             />
           </div>
           <div className="Details-body-right">
-            <div className="Details-body-right-title">{movie.Title}</div>
+            <div className="Details-body-right-title">
+              <div className="Details-body-right-title-text">{movie.Title}</div>
+              <div className="Details-body-right-title-remove" onClick={remove}>
+                X
+              </div>
+            </div>
             <div className="Details-body-right-imdb">
               <div className="Details-body-right-imdb-logo">
                 <img src="/imdb-logo.svg" alt="" />

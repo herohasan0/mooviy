@@ -5,6 +5,13 @@ import { inject, observer } from 'mobx-react';
 class Showdetails extends React.Component {
   render() {
     const show = () => {
+      const movie = document.getElementsByClassName('Movie')[this.props.index];
+      const detail = document.getElementById('Details');
+      const remove = document.getElementById('Remove');
+      detail.classList.add('show');
+      remove.classList.add('remove-show');
+      detail.style.top = `${movie.offsetTop}px`;
+
       fetch(
         `http://www.omdbapi.com/?i=${this.props.imdbID}&apikey=${process.env.API_KEY}`
       )
@@ -16,8 +23,6 @@ class Showdetails extends React.Component {
             //Error
           }
         });
-      const detail = document.getElementById('Details');
-      detail.classList.toggle('show');
     };
     return <div className="Showdetails" onClick={show}></div>;
   }
