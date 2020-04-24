@@ -1,5 +1,9 @@
 const Label = (props) => {
-  return <h3 className="Label">{props.text}</h3>;
+  return (
+    <div className="Label">
+      {props.text} <em>{props.last}</em>
+    </div>
+  );
 };
 
 export default Label;
