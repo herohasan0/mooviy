@@ -10,14 +10,22 @@ class Favorites extends React.Component {
     let movies = [];
     if (typeof window !== 'undefined') {
       movies = this.props.store.favMovies[0];
-      console.log(movies);
     }
     return (
       <div className="Favorites">
-        <Label text="Your favorite movies are here ✨" />
+        {movies.length > 0 ? (
+          <Label text="Your favorite movies are here ✨" />
+        ) : (
+          <Label text="Your favorite movies will be here ✨" />
+        )}
+
         <div className="movies">
           {movies.map((movie, index) => (
-            <Movie movie={movie} index={index} />
+            <Movie
+              key={`${index}-${movie.Title}`}
+              movie={movie}
+              index={index}
+            />
           ))}
         </div>
         <Details />
