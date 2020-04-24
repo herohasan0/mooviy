@@ -27,7 +27,7 @@ class Header extends React.Component {
     };
 
     return (
-      <div className="div">
+      <header className="Header">
         <Head>
           <title>MOOVIY - Find Best Movies</title>
           <meta
@@ -40,29 +40,27 @@ class Header extends React.Component {
             rel="stylesheet"
           ></link>
         </Head>
-        <header className="Header">
-          <div className="Header-body">
-            <div className="Header-left">
-              <Link href="/">
-                <a>
-                  <img src="/logo.png" alt="" className="Header-left-img" />
-                </a>
-              </Link>
-            </div>
-            <div className="Header-right">
-              <Search search={searchFunc} />
-              <Link href="/favorites">
-                <a className="Header-right-link">
-                  favorites
-                  <span className="Header-right-link-indicator">
-                    {this.props.store.favCount}
-                  </span>
-                </a>
-              </Link>
-            </div>
+        <div className="Header-body">
+          <div className="Header-left">
+            <Link href="/">
+              <a>
+                <img src="/logo.png" alt="" className="Header-left-img" />
+              </a>
+            </Link>
           </div>
-        </header>
-      </div>
+          <div className="Header-right">
+            <Search search={searchFunc} />
+            <Link href="/favorites">
+              <a className="Header-right-link">
+                favorites
+                <span className="Header-right-link-indicator">
+                  {this.props.store.favCount}
+                </span>
+              </a>
+            </Link>
+          </div>
+        </div>
+      </header>
     );
   }
 }
