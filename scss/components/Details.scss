@@ -10,7 +10,9 @@
     box-shadow: 0 20px 40px rgba(37, 37, 37, 0.185);
     color: $color-white;
     padding-right: 40px;
-    @include mq {
+    width: 100vw;
+    @include mq('small') {
+      width: auto;
     }
     &-left {
       &-img {
@@ -67,10 +69,13 @@
             line-height: 14px;
           }
           & span:last-child {
-            width: 350px;
+            width: fit-content;
             letter-spacing: 0.61px;
             line-height: 15px;
             font-weight: bold;
+            @include mq('small') {
+              width: 350px;
+            }
           }
         }
       }
