@@ -22,7 +22,11 @@ class Remove extends React.Component {
       }
     };
     return (
-      <div className="Remove" title="Remove from Favorites" onClick={remove}>
+      <div
+        className="Remove logo-big center"
+        title="Remove from Favorites"
+        onClick={remove}
+      >
         <div className="Remove-img"></div>
       </div>
     );

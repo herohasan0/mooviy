@@ -1,9 +1,8 @@
 .Label {
-  color: white;
-  font-size: 1em;
-  margin-top: 5px;
+  color: $color-white;
+  font-size: $font-size;
+  margin-top: $gutter-extra-small;
   @include mq {
-    font-size: 1.3em;
-    margin-left: 14px;
+    margin-left: $gap;
   }
 }

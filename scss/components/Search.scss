@@ -1,12 +1,12 @@
 .Search {
   &-input {
     width: 60px;
-    margin-right: 24px;
+    margin-right: $margin-gap;
     background: none;
     border: none;
     outline: none;
     color: $color-white;
-    margin-left: 10px;
+    margin-left: $gutter-extra-small;
     &::placeholder {
       color: white;
     }

@@ -1,18 +1,11 @@
 .Addtofav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 36px;
-  cursor: pointer;
   &-img {
     width: inherit;
     height: inherit;
     background: url('/like.svg') no-repeat center center;
-    background-size: 20px 20px;
+    background-size: $gutter-small $gutter-small;
   }
   &:hover {
-    background-color: rgba(224, 36, 36, 0.493);
+    background-color: $background-red;
   }
 }

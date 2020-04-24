@@ -1,18 +1,43 @@
 //Colors
-$bacground-gradient: linear-gradient(90deg, #000000 0%, #0a2230 88.4%);
+$bacground-gradient: linear-gradient(90deg, #000 0%, #0a2230 88.4%);
 $color-white: #fff;
+$color-black: #000;
+$color-black-soft: #000000ec;
+$color-white-soft: #d4dded;
+$color-white-gray: #b4bccc;
 $color-gray: #687d88;
-$card-shadow: 0px 16px 32px rgba(26, 26, 26, 0.603);
-$color-dark: rgba(31, 43, 51, 1);
+$card-shadow: 0px 16px 32px #071a25;
+$color-dark: #1f2b33;
+$background-red: #e024247e;
+$background-remove: #3636364f;
+$color-red: #e91b1b;
 
 //Sizing
 $container-width: 1140px;
 $gutter: 30px;
+$gutter-big: 40px;
+$gutter-small: 20px;
+$gutter-extra-small: 10px;
+$gap: 14px;
+$margin-gap: 24px;
+$logo-size-big: 36px;
+$radius-size-big: 36px;
+$card-body-height: 357px;
+$detail-content-height: 215px;
+$full-screen: 100vw;
+$img-height: 300px;
+$img-width: 200px;
 
 //Font
 $font-family: Helvetica;
 $font-size: 16px;
+$font-size-big: 18px;
 $font-size-small: 14px;
+$font-size-extra-small: 12px;
+$font-size-title: 1.5em;
+$letter-space-small: 0.6px;
+$line-height-small: 14px;
+$line-height-big: 15px;
 
 //Loading animation
 $base-color: #acacac13;

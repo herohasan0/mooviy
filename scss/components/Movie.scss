@@ -2,10 +2,10 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 200px;
-  margin-top: 24px;
-  margin-right: 14px;
-  margin-left: 14px;
+  width: $img-width;
+  margin-top: $margin-gap;
+  margin-right: $gap;
+  margin-left: $gap;
   &-top {
     position: relative;
     box-shadow: $card-shadow;
@@ -13,12 +13,12 @@
   &-bottom {
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: $gap;
     &-text {
       margin-right: 5px;
       &-title {
         color: $color-white;
-        font-size: 1em;
+        font-size: $font-size;
       }
       &-year {
         margin-top: 8px;

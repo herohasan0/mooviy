@@ -4,13 +4,12 @@
   &-body {
     display: flex;
     position: relative;
-    height: 357px;
+    height: $card-body-height;
     z-index: 3;
     background-color: $color-dark;
-    box-shadow: 0 20px 40px rgba(37, 37, 37, 0.185);
     color: $color-white;
-    padding-right: 40px;
-    width: 100vw;
+    padding-right: $gutter-big;
+    width: $full-screen;
     @include mq('small') {
       width: auto;
     }
@@ -23,55 +22,55 @@
       }
     }
     &-right {
-      padding-left: 30px;
-      padding-top: 30px;
+      padding-left: $gutter;
+      padding-top: $gutter;
       &-title {
         display: flex;
         justify-content: space-between;
-        font-size: 1.5em;
+        font-size: $font-size-title;
         &-remove {
           cursor: pointer;
-          margin-left: 10px;
-          color: #e91b1b;
+          margin-left: $gutter-small;
+          color: $color-red;
           &:hover {
-            color: rgba(128, 128, 128, 0.616);
+            color: $color-gray;
           }
         }
       }
       &-imdb {
-        margin-top: 17px;
+        margin-top: $gutter-small;
         display: flex;
         align-items: center;
         &-point {
-          margin-left: 10px;
+          margin-left: $gutter-extra-small;
           & span:first-child {
-            font-size: 18px;
+            font-size: $font-size-big;
           }
           & span:last-child {
-            font-size: 12px;
-            color: rgba(180, 188, 204, 1);
+            font-size: $font-size-extra-small;
+            color: $color-white-gray;
           }
         }
       }
       &-content {
         display: flex;
-        height: 215px;
+        height: $detail-content-height;
         flex-direction: column;
         justify-content: space-between;
-        font-size: 12px;
-        padding-top: 20px;
+        font-size: $font-size-extra-small;
+        padding-top: $gutter-small;
         div {
           display: flex;
           & span:first-child {
             width: 60px;
-            color: rgba(212, 221, 237, 1);
-            letter-spacing: 0.6px;
-            line-height: 14px;
+            color: $color-white-soft;
+            letter-spacing: $letter-space-small;
+            line-height: $line-height-small;
           }
           & span:last-child {
             width: fit-content;
-            letter-spacing: 0.61px;
-            line-height: 15px;
+            letter-spacing: $letter-space-small;
+            line-height: $line-height-big;
             font-weight: bold;
             @include mq('small') {
               width: 350px;
@@ -98,7 +97,7 @@
     bottom: 0;
     height: 100%;
     z-index: 2;
-    background-color: rgba(54, 54, 54, 0.308);
+    background-color: $background-remove;
     cursor: pointer;
   }
 }

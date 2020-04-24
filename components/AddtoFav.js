@@ -27,7 +27,11 @@ class AddtoFav extends React.Component {
       });
     };
     return (
-      <div className="Addtofav" title="Add to Favorites" onClick={add}>
+      <div
+        className="Addtofav logo-big center"
+        title="Add to Favorites"
+        onClick={add}
+      >
         <div className="Addtofav-img"></div>
       </div>
     );
